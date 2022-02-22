@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-exercise",
+  "version": "1.0.0",
+  "description": "The FUNIX Node.js Course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonykhanhvo/nodejs-exercise.git"
+  },
+  "author": "TonyKhanhVo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonykhanhvo/nodejs-exercise/issues"
+  },
+  "homepage": "https://github.com/tonykhanhvo/nodejs-exercise#readme"
+}
