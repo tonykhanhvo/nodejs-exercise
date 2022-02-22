@@ -4,7 +4,8 @@
   "description": "The FUNIX Node.js Course",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tonykhanhvo/nodejs-exercise/issues"
   },
-  "homepage": "https://github.com/tonykhanhvo/nodejs-exercise#readme"
+  "homepage": "https://github.com/tonykhanhvo/nodejs-exercise#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
 }
