@@ -19,5 +19,8 @@
   "homepage": "https://github.com/tonykhanhvo/nodejs-exercise#readme",
   "devDependencies": {
     "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
   }
 }
