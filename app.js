@@ -4,14 +4,19 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
-  console.log('In the middleware here!');
-  next(); //Call next() cho phep request di den middleware tiep theo
+app.use('/', (req, res, next) => {
+  console.log('This always run!');
+  next();
 });
 
-app.use((req, res, next) => {
-  console.log('In another middleware!')
-  res.send('<h1>Hello from Express!</h1>')
+app.use('/add-product', (req, res, next) => {
+  console.log('Middleware add-product');
+  res.send('<h1>The "Add Product" Page</h1>');
+});
+
+app.use('/', (req, res, next) => {
+  console.log('Middleware slash');
+  res.send('<h1>Hello from Express!</h1>');
 });
 
 const server = http.createServer(app);
