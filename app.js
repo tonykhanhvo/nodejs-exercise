@@ -36,7 +36,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
-// User.hasMany(Product); - viet nghich dao voi line tren
+User.hasMany(Product); //- viet nghich dao voi line tren
 
 sequelize
   .sync({force: true})
