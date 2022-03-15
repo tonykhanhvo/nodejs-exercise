@@ -11,7 +11,7 @@ class User{
 
   save() {
     const db = getDb();
-    return db.collection('users').insertOne(this)
+    return db.collection('users').insertOne(this);
   }
 
   static findById(userId) {
