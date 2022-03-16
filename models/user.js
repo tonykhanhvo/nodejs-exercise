@@ -78,8 +78,18 @@ class User{
 
   addOrder() {
     const db = getDb();
-    return db.collection('orders')
-      .insertOne(this.cart)
+    return this.getCart()
+      .then(products => {
+        const order = {
+          items: products,
+          user: {
+            _id: new ObjectId(this._id),
+            name: this.name,
+            email: this.email
+          }
+        };
+        return db.collection('orders').insertOne(order);
+      })
       .then(result => {
         this.cart = {items: []}; //Sau khi add Order xong se xoa Cart
         return db.collection('users')
@@ -89,6 +99,12 @@ class User{
           );
       })
       .catch(err => console.log(err));
+  }
+
+  getOrder() {
+    // const db = getDb();
+    // return db.collection('orders')
+
   }
 
   static findById(userId) {
