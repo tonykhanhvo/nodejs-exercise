@@ -64,6 +64,18 @@ class User{
       .catch(err => console.log(err));
   }
 
+  deleteItemFromCart(prodId) {
+    const updatedCartItems = this.cart.items.filter(item => {
+      return item.prodId.toString() !== prodId.toString();
+    });
+    const db = getDb();
+    return db.collection('users')
+      .updateOne(
+        {_id: new ObjectId(this._id)},
+        {$set: {cart: {items: updatedCartItems}}}
+      );
+  }
+
   static findById(userId) {
     const db = getDb();
     return db.collection('users').findOne({_id: new ObjectId(userId)});
