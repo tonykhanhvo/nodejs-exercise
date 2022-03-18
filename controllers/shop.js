@@ -110,8 +110,8 @@ exports.postOrder = (req, res, next) => {
       const products = user.cart.items.map(i => {
         return {
           quantity: i.quantity,
-          product: i.prodId
-        }
+          product: {...i.prodId._doc}
+        };
       });
       const order = new Order({
         user: {
