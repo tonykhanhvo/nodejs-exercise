@@ -50,16 +50,11 @@ app.use((req, res, next) => {
     .catch(err => console.log(err));
 });
 
-// app.use((req, res, next) => {
-//   User.findById('62330680cb57770ee440f8d9')
-//     .then(user => {
-//       req.user = user;
-//       next();
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// });
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isLoggedIn;
+  res.locals.csrfToken = req.csrfToken();
+  next();
+})
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
